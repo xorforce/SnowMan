@@ -11,7 +11,7 @@ Snowman is a minimalist weather app written in Swift 4. This project is also the
 ### Instructions to build project <br> 
 <ul>
 <li> Clone project ⬇️ </li>
-<li> Go into project directory using Terminal and do ```pod install``` </li>
+<li> Go into project directory using Terminal and do pod install </li>
 <li> Run the project ✅ </li>
 </ul>
 
