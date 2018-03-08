@@ -7,23 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74DDB3F3258BB90EB3BA3878 /* Pods_SnowMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA8C086D893F1560E6301AB /* Pods_SnowMan.framework */; };
+		D10B4A0720516A66000A0EBF /* WeatherVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */; };
+		D10B4A0920519886000A0EBF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */; };
 		D1904FF2204DB13200A5DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1904FF1204DB13200A5DD0B /* AppDelegate.swift */; };
-		D1904FF4204DB13200A5DD0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1904FF3204DB13200A5DD0B /* ViewController.swift */; };
 		D1904FF7204DB13200A5DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1904FF5204DB13200A5DD0B /* Main.storyboard */; };
 		D1904FFA204DB13200A5DD0B /* SnowMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1904FF8204DB13200A5DD0B /* SnowMan.xcdatamodeld */; };
 		D1904FFC204DB13200A5DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1904FFB204DB13200A5DD0B /* Assets.xcassets */; };
 		D1904FFF204DB13200A5DD0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1904FFD204DB13200A5DD0B /* LaunchScreen.storyboard */; };
+		D190500D204DB9B700A5DD0B /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D190500C204DB9B700A5DD0B /* WeatherVC.swift */; };
+		D190500F204DBC1B00A5DD0B /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */; };
+		D1905011204DC34A00A5DD0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905010204DC34A00A5DD0B /* Constants.swift */; };
+		D1905013204DC3B800A5DD0B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905012204DC3B800A5DD0B /* Location.swift */; };
+		D1905021204ED52000A5DD0B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */; };
+		D1905023204ED7E200A5DD0B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905022204ED7E200A5DD0B /* Forecast.swift */; };
+		D1B320E9205059C500C07167 /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1B320E7205059C500C07167 /* Nexa Bold.otf */; };
+		D1B320EA205059C500C07167 /* Nexa Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1B320E8205059C500C07167 /* Nexa Light.otf */; };
+		D1D41A36204F313100DC1DA6 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D41A35204F313100DC1DA6 /* ForecastCollectionViewCell.swift */; };
+		D1EC159620500B0300F8972A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC159520500B0300F8972A /* UIViewController+Extensions.swift */; };
+		D1EC159E2050101A00F8972A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC159D2050101A00F8972A /* Reachability.m */; };
+		D1EC15A02050264B00F8972A /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC159F2050264B00F8972A /* RealmService.swift */; };
+		D1EC15A22050348F00F8972A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC15A12050348F00F8972A /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		274EF03B3480C545D4E2B91C /* Pods-SnowMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMan/Pods-SnowMan.debug.xcconfig"; sourceTree = "<group>"; };
+		74DD8D61CA3E5A977D0C910A /* Pods-SnowMan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnowMan.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnowMan/Pods-SnowMan.release.xcconfig"; sourceTree = "<group>"; };
+		9CA8C086D893F1560E6301AB /* Pods_SnowMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherVC+Extensions.swift"; sourceTree = "<group>"; };
+		D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D1904FEE204DB13200A5DD0B /* SnowMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1904FF1204DB13200A5DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1904FF3204DB13200A5DD0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D1904FF6204DB13200A5DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1904FF9204DB13200A5DD0B /* SnowMan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnowMan.xcdatamodel; sourceTree = "<group>"; };
 		D1904FFB204DB13200A5DD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1904FFE204DB13200A5DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1905000204DB13200A5DD0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D190500C204DB9B700A5DD0B /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		D1905010204DC34A00A5DD0B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1905012204DC3B800A5DD0B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		D1905022204ED7E200A5DD0B /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		D1B320E7205059C500C07167 /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
+		D1B320E8205059C500C07167 /* Nexa Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Light.otf"; sourceTree = "<group>"; };
+		D1D41A35204F313100DC1DA6 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1EC159520500B0300F8972A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		D1EC159B2050101900F8972A /* SnowMan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnowMan-Bridging-Header.h"; sourceTree = "<group>"; };
+		D1EC159C2050101A00F8972A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D1EC159D2050101A00F8972A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D1EC159F2050264B00F8972A /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		D1EC15A12050348F00F8972A /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +65,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DDB3F3258BB90EB3BA3878 /* Pods_SnowMan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		655A7F987008E3380D73783D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				274EF03B3480C545D4E2B91C /* Pods-SnowMan.debug.xcconfig */,
+				74DD8D61CA3E5A977D0C910A /* Pods-SnowMan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D1904FE5204DB13200A5DD0B = {
 			isa = PBXGroup;
 			children = (
+				D1EC159C2050101A00F8972A /* Reachability.h */,
+				D1EC159D2050101A00F8972A /* Reachability.m */,
 				D1904FF0204DB13200A5DD0B /* SnowMan */,
 				D1904FEF204DB13200A5DD0B /* Products */,
+				655A7F987008E3380D73783D /* Pods */,
+				EDDE0A292BE2F53764D9466D /* Frameworks */,
+				D1EC159B2050101900F8972A /* SnowMan-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +105,68 @@
 		D1904FF0204DB13200A5DD0B /* SnowMan */ = {
 			isa = PBXGroup;
 			children = (
-				D1904FF1204DB13200A5DD0B /* AppDelegate.swift */,
-				D1904FF3204DB13200A5DD0B /* ViewController.swift */,
 				D1904FF5204DB13200A5DD0B /* Main.storyboard */,
 				D1904FFB204DB13200A5DD0B /* Assets.xcassets */,
 				D1904FFD204DB13200A5DD0B /* LaunchScreen.storyboard */,
 				D1905000204DB13200A5DD0B /* Info.plist */,
 				D1904FF8204DB13200A5DD0B /* SnowMan.xcdatamodeld */,
+				D1905006204DB38700A5DD0B /* Model */,
+				D1905007204DB39000A5DD0B /* View */,
+				D1905008204DB39500A5DD0B /* Controller */,
+				D1905009204DB3A400A5DD0B /* Utils */,
 			);
 			path = SnowMan;
+			sourceTree = "<group>";
+		};
+		D1905006204DB38700A5DD0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */,
+				D1905022204ED7E200A5DD0B /* Forecast.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1905007204DB39000A5DD0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D41A35204F313100DC1DA6 /* ForecastCollectionViewCell.swift */,
+				D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1905008204DB39500A5DD0B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D190500C204DB9B700A5DD0B /* WeatherVC.swift */,
+				D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */,
+				D1EC15A12050348F00F8972A /* SettingsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1905009204DB3A400A5DD0B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D1904FF1204DB13200A5DD0B /* AppDelegate.swift */,
+				D1905010204DC34A00A5DD0B /* Constants.swift */,
+				D1905012204DC3B800A5DD0B /* Location.swift */,
+				D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */,
+				D1EC159520500B0300F8972A /* UIViewController+Extensions.swift */,
+				D1EC159F2050264B00F8972A /* RealmService.swift */,
+				D1B320E7205059C500C07167 /* Nexa Bold.otf */,
+				D1B320E8205059C500C07167 /* Nexa Light.otf */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EDDE0A292BE2F53764D9466D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CA8C086D893F1560E6301AB /* Pods_SnowMan.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1905003204DB13200A5DD0B /* Build configuration list for PBXNativeTarget "SnowMan" */;
 			buildPhases = (
+				E5AE0019420753FC369BAEFB /* [CP] Check Pods Manifest.lock */,
 				D1904FEA204DB13200A5DD0B /* Sources */,
 				D1904FEB204DB13200A5DD0B /* Frameworks */,
 				D1904FEC204DB13200A5DD0B /* Resources */,
+				023211D5F752FDCBCC791D0A /* [CP] Embed Pods Frameworks */,
+				66F27B0E077ADD6AF4D78F6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,6 +204,7 @@
 				TargetAttributes = {
 					D1904FED204DB13200A5DD0B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,7 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B320EA205059C500C07167 /* Nexa Light.otf in Resources */,
 				D1904FFF204DB13200A5DD0B /* LaunchScreen.storyboard in Resources */,
+				D1B320E9205059C500C07167 /* Nexa Bold.otf in Resources */,
 				D1904FFC204DB13200A5DD0B /* Assets.xcassets in Resources */,
 				D1904FF7204DB13200A5DD0B /* Main.storyboard in Resources */,
 			);
@@ -134,14 +242,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		023211D5F752FDCBCC791D0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SnowMan/Pods-SnowMan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnowMan/Pods-SnowMan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66F27B0E077ADD6AF4D78F6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnowMan/Pods-SnowMan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5AE0019420753FC369BAEFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnowMan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D1904FEA204DB13200A5DD0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1904FF4204DB13200A5DD0B /* ViewController.swift in Sources */,
+				D1EC15A22050348F00F8972A /* SettingsVC.swift in Sources */,
+				D1905023204ED7E200A5DD0B /* Forecast.swift in Sources */,
+				D190500F204DBC1B00A5DD0B /* CurrentWeather.swift in Sources */,
+				D1EC159620500B0300F8972A /* UIViewController+Extensions.swift in Sources */,
+				D1EC159E2050101A00F8972A /* Reachability.m in Sources */,
 				D1904FF2204DB13200A5DD0B /* AppDelegate.swift in Sources */,
 				D1904FFA204DB13200A5DD0B /* SnowMan.xcdatamodeld in Sources */,
+				D10B4A0720516A66000A0EBF /* WeatherVC+Extensions.swift in Sources */,
+				D10B4A0920519886000A0EBF /* SettingsTableViewCell.swift in Sources */,
+				D190500D204DB9B700A5DD0B /* WeatherVC.swift in Sources */,
+				D1EC15A02050264B00F8972A /* RealmService.swift in Sources */,
+				D1D41A36204F313100DC1DA6 /* ForecastCollectionViewCell.swift in Sources */,
+				D1905011204DC34A00A5DD0B /* Constants.swift in Sources */,
+				D1905013204DC3B800A5DD0B /* Location.swift in Sources */,
+				D1905021204ED52000A5DD0B /* UILabel+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,14 +456,18 @@
 		};
 		D1905004204DB13200A5DD0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274EF03B3480C545D4E2B91C /* Pods-SnowMan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VG36S3M9UZ;
 				INFOPLIST_FILE = SnowMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhagatsingh.SnowMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnowMan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -291,14 +475,17 @@
 		};
 		D1905005204DB13200A5DD0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74DD8D61CA3E5A977D0C910A /* Pods-SnowMan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VG36S3M9UZ;
 				INFOPLIST_FILE = SnowMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhagatsingh.SnowMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnowMan-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
