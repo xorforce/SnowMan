@@ -1,5 +1,13 @@
 # SnowMan
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/14857735/37177175-b5a9f216-2344-11e8-85a3-31aca7eae3ed.png">
+</p>
+<br>
 Snowman is a minimalist weather app written in Swift 4. This project is also the capstone project for Udacity's Nanodegree Project. The app starts with a screen which shows you current weather, along with 10 day forecast. On the top right, it has a settings button which enables and disable a dark mode theme in the app. If the Internet Connection is not available, the data is set using the most recent object saved in the Realm Database.
+
+### Screenshots <br>
+![alt_text](https://user-images.githubusercontent.com/14857735/37177351-2dad5faa-2345-11e8-8812-803345e70c9b.PNG)
+![alt_text](https://user-images.githubusercontent.com/14857735/37177352-2ddceba8-2345-11e8-90d1-efdfd92d91cb.PNG)
 
 ### Key Features :- <br> 
 <ul>
