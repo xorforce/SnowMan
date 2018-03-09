@@ -43,14 +43,13 @@ class WeatherVC: UIViewController {
         showViewAndLoader(view: loaderView, loader: indicatorView, darkMode: darkMode)
         initialiseVariables()
         setupLocationCode()
-        locationAuthStatus()
-        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         performUIUpdates()
+        locationAuthStatus()
         setNeedsStatusBarAppearanceUpdate()
     }
     
@@ -110,6 +109,8 @@ extension WeatherVC {
             //show data from Realm
             if let currentDBObject = currentWeatherFromRealm {
                 setDataFromObject(weather: currentDBObject)
+                collectionView.isHidden = true
+                errorLabel.text = "Connect to internet for Forecast data"
             }
         }
         collectionView.reloadData()
@@ -124,11 +125,13 @@ extension WeatherVC {
     }
     
     func locationAuthStatus() {
-        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
             Location.shared.latitude = currentLocation.coordinate.latitude
             Location.shared.longitude = currentLocation.coordinate.longitude
+            if !downloadSuccesful {
+                getData()
+            }
         }
         else {
             // no location available
