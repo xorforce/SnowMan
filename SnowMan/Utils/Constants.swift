@@ -14,11 +14,11 @@ let latitude = "lat="
 let longitude = "&lon="
 let app_id = "&appid="
 let api_key = "a26524e13fd724411501e93ef445f9bc"
-let darkModeEnabled = UserDefaults.standard.bool(forKey: "darkMode")
+let defaultLat = 37.7749
+let defaultLong = 122.4194
 
 typealias completed = (_ success: Bool) -> ()
 
 let currentWeatherUrl = "\(current_base_url)\(latitude)\(Location.shared.latitude!)\(longitude)\(Location.shared.longitude!)\(app_id)\(api_key)"
-
 
 let forecastWeatherUrl = "\(daily_base_url)\(latitude)\(Location.shared.latitude!)\(longitude)\(Location.shared.longitude!)&cnt=10&mode=json\(app_id)\(api_key)"

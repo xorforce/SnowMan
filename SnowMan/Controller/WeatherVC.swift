@@ -127,8 +127,14 @@ extension WeatherVC {
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-            Location.shared.latitude = currentLocation.coordinate.latitude
-            Location.shared.longitude = currentLocation.coordinate.longitude
+            if let currentLoc = currentLocation {
+                Location.shared.latitude = currentLoc.coordinate.latitude
+                Location.shared.longitude = currentLoc.coordinate.longitude
+            }
+            else {
+                locationAuthStatus()
+            }
+            
             if !downloadSuccesful {
                 getData()
             }

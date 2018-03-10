@@ -12,6 +12,6 @@ class Location {
     static var shared = Location()
     private init() {}
     
-    var latitude : Double!
-    var longitude : Double!
+    var latitude : Double! = defaultLat
+    var longitude : Double! = defaultLong
 }
