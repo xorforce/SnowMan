@@ -19,13 +19,14 @@ extension WeatherVC {
             view.backgroundColor = .black
             collectionView.backgroundColor = .black
             settingsButton.setImage(UIImage(named: "settingsW"), for: .normal)
-            
+            refreshButton.setImage(UIImage(named: "reloadW"), for: .normal)
         }
         else {
             setLightStyle(labels: [mainWeather, mainLocation, mainTemprature, humidityLabel, windSpeed, highLowTemprature, tempratureText, windText, humidityText])
             view.backgroundColor = .white
             collectionView.backgroundColor = .white
             settingsButton.setImage(UIImage(named: "settings"), for: .normal)
+            refreshButton.setImage(UIImage(named: "reload"), for: .normal)
         }
         collectionView.reloadData()
         mainThumbnail.image = UIImage(named: imageToShow(darkMode: darkMode, code: currentWeather.weatherCode.value))

@@ -264,6 +264,7 @@
                         <outlet property="mainTemprature" destination="ISA-tT-dSp" id="oht-8f-j17"/>
                         <outlet property="mainThumbnail" destination="uUM-Eg-66E" id="Ge0-3B-f9o"/>
                         <outlet property="mainWeather" destination="1Lp-27-KBc" id="q9E-5w-Zx7"/>
+                        <outlet property="refreshButton" destination="r8R-lk-T59" id="806-rK-nd5"/>
                         <outlet property="settingsButton" destination="Zoy-ZU-Z0h" id="Itd-2c-Znd"/>
                         <outlet property="tempratureText" destination="hzJ-X4-FG9" id="frM-CG-keZ"/>
                         <outlet property="windSpeed" destination="ol0-xG-LVx" id="UK1-N0-hTj"/>

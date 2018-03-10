@@ -27,6 +27,7 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var settingsButton : UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIButton!
     
     let darkMode = UserDefaults.standard.bool(forKey: "darkMode")
     var locationManager = CLLocationManager()
