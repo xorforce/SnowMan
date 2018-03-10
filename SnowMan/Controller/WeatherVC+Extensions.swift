@@ -19,6 +19,7 @@ extension WeatherVC {
             view.backgroundColor = .black
             collectionView.backgroundColor = .black
             settingsButton.setImage(UIImage(named: "settingsW"), for: .normal)
+            
         }
         else {
             setLightStyle(labels: [mainWeather, mainLocation, mainTemprature, humidityLabel, windSpeed, highLowTemprature, tempratureText, windText, humidityText])
@@ -73,6 +74,21 @@ extension WeatherVC : UICollectionViewDelegate, UICollectionViewDataSource {
 extension WeatherVC : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationAuthStatus()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = manager.location?.coordinate else {return}
+        Location.shared.latitude = location.latitude
+        Location.shared.longitude = location.longitude
+        if !downloadSuccesful {
+            getData()
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        showAlert(title: "Error", message: error.localizedDescription, actions: [action])
     }
 }
 

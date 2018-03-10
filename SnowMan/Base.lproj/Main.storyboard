@@ -27,6 +27,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8R-lk-T59">
+                                <rect key="frame" x="10" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="A6o-bY-xHq"/>
+                                    <constraint firstAttribute="height" constant="25" id="hjR-GY-tpr"/>
+                                </constraints>
+                                <state key="normal" image="reload"/>
+                                <connections>
+                                    <action selector="refreshLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8e-mL-dSU"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-m5-tzC">
                                 <rect key="frame" x="167.5" y="590.5" width="41.5" height="16"/>
                                 <fontDescription key="fontDescription" name="NexaLight" family="Nexa Light" pointSize="16"/>
@@ -221,6 +232,7 @@
                             <constraint firstItem="vyp-cH-kgq" firstAttribute="top" secondItem="fSc-wa-4yL" secondAttribute="bottom" constant="30" id="18w-tr-nmM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VGf-m5-tzC" secondAttribute="bottom" constant="60" id="2GN-uj-b8f"/>
                             <constraint firstItem="ypB-4L-4Ys" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="39g-fD-z8e"/>
+                            <constraint firstItem="r8R-lk-T59" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Bce-gE-dus"/>
                             <constraint firstItem="ypB-4L-4Ys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dgp-X7-B0N"/>
                             <constraint firstItem="vyp-cH-kgq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EgU-Gu-0gA"/>
                             <constraint firstItem="vyp-cH-kgq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fqn-tc-PUZ"/>
@@ -230,6 +242,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Hm-z1-k9a" secondAttribute="bottom" constant="40" id="ZTr-Hc-QFd"/>
                             <constraint firstItem="6Hm-z1-k9a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Zsy-kV-SEp"/>
                             <constraint firstItem="ypB-4L-4Ys" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="avS-lz-2Cv"/>
+                            <constraint firstItem="r8R-lk-T59" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hNv-Vt-Ovv"/>
                             <constraint firstItem="ypB-4L-4Ys" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iM5-4p-KaC"/>
                             <constraint firstItem="Zoy-ZU-Z0h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="kJ4-vj-jph"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Hm-z1-k9a" secondAttribute="trailing" constant="16" id="q8M-i8-CUL"/>
@@ -17866,6 +17879,7 @@ ABAKRwAQCk4AEApWABAKYwAQCmgAEApqABAKbAAQCnEAEAp5ABAKfAAQCoEAEAqJABAKjAAQCp4AEAqh
 ABAKpgAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAEAqoA
 </mutableData>
         </image>
+        <image name="reload" width="128" height="128"/>
         <image name="settings" width="64" height="64"/>
     </resources>
 </document>

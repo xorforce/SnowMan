@@ -127,17 +127,6 @@ extension WeatherVC {
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-            if let currentLoc = currentLocation {
-                Location.shared.latitude = currentLoc.coordinate.latitude
-                Location.shared.longitude = currentLoc.coordinate.longitude
-            }
-            else {
-                locationAuthStatus()
-            }
-            
-            if !downloadSuccesful {
-                getData()
-            }
         }
         else {
             // no location available
@@ -153,6 +142,11 @@ extension WeatherVC {
         let realm = RealmService.shared.realm
         currentWeatherFromRealm = realm.objects(CurrentWeather.self).last
         currentList = realm.objects(CurrentWeather.self)
+    }
+    
+    @IBAction func refreshLocation() {
+        showViewAndLoader(view: loaderView, loader: indicatorView, darkMode: darkMode)
+        locationManager.requestLocation()
     }
 }
 
