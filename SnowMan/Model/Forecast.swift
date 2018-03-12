@@ -19,7 +19,7 @@ class Forecast {
     var weatherType : String!
     var weatherCode = RealmOptional<Int>()
     
-    func downloadForecastDetails(completionHandler: @escaping (_ success: Bool, _ forecasts: [Forecast]?) -> Void) {
+    func downloadForecastDetails(url: String, completionHandler: @escaping (_ success: Bool, _ forecasts: [Forecast]?) -> Void) {
         var forecasts = [Forecast]()
         let networkReachability = Reachability.forInternetConnection()
         let networkStatus = networkReachability?.currentReachabilityStatus()
@@ -28,7 +28,7 @@ class Forecast {
             completionHandler(false, nil)
         }
         else {
-            Alamofire.request(forecastWeatherUrl, method: .get).responseJSON { (response) in
+            Alamofire.request(url, method: .get).responseJSON { (response) in
                 let result = response.result
                 
                 if let dict = result.value as? Dictionary<String,AnyObject> {

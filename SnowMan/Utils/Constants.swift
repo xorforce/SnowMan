@@ -19,6 +19,9 @@ let defaultLong = 122.4194
 
 typealias completed = (_ success: Bool) -> ()
 
-let currentWeatherUrl = "\(current_base_url)\(latitude)\(Location.shared.latitude!)\(longitude)\(Location.shared.longitude!)\(app_id)\(api_key)"
+let darkModeKey = "darkMode"
+let firstLaunchKey = "firstLaunch"
+let latitudeKey = "latitude"
+let longitudeKey = "longitude"
 
-let forecastWeatherUrl = "\(daily_base_url)\(latitude)\(Location.shared.latitude!)\(longitude)\(Location.shared.longitude!)&cnt=10&mode=json\(app_id)\(api_key)"
+

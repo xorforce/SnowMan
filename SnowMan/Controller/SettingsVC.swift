@@ -10,12 +10,12 @@ import UIKit
 
 class SettingsVC: UITableViewController {
     
-    let darkMode = UserDefaults.standard.bool(forKey: "darkMode")
+    let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
     let rows = ["Dark Mode"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = false
+        
         if darkMode {
             tableView.backgroundColor = .black
             navigationController?.navigationBar.tintColor = .white
@@ -32,10 +32,15 @@ class SettingsVC: UITableViewController {
         navigationController?.navigationBar.backItem?.title = ""
         setNeedsStatusBarAppearanceUpdate()
     }
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! SettingsTableViewCell
         cell.settingsLabel.text = rows[indexPath.row]
         return cell
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

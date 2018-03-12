@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 import RealmSwift
 
 class WeatherVC: UIViewController {
@@ -27,30 +26,25 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var settingsButton : UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
-    let darkMode = UserDefaults.standard.bool(forKey: "darkMode")
-    var locationManager = CLLocationManager()
-    var currentLocation : CLLocation!
+    let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
     var forecast : Forecast!
     var forecastsArray : [Forecast]?
     var currentWeather : CurrentWeather!
-    var currentList : Results<CurrentWeather>!
-    var currentWeatherFromRealm : CurrentWeather?
     var downloadSuccesful = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showViewAndLoader(view: loaderView, loader: indicatorView, darkMode: darkMode)
         initialiseVariables()
-        setupLocationCode()
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         performUIUpdates()
-        locationAuthStatus()
         setNeedsStatusBarAppearanceUpdate()
     }
     
@@ -81,73 +75,42 @@ extension WeatherVC {
         let networkStatus = networkReachability?.currentReachabilityStatus()
         if networkStatus?.rawValue != NotReachable.rawValue {
             //internet available
-            currentWeather.downloadWeatherDetails(completionHandler: { (success) in
+            let latitude = UserDefaults.standard.double(forKey: latitudeKey)
+            let longitude = UserDefaults.standard.double(forKey: longitudeKey)
+            currentWeather = CurrentWeather()
+            currentWeather.downloadWeatherDetails(url: getCurrentWeatherURL(latitudeCoords: latitude, longitudeCoords: longitude) ,completionHandler: { (success) in
                 if success {
                     //request successful
                     self.downloadSuccesful = true
-                    self.forecast.downloadForecastDetails(completionHandler: { (success, forecasts) in
+                    self.forecast.downloadForecastDetails(url: self.getCurrentForecastURL(latitudeCoords: latitude, longitudeCoords: longitude), completionHandler: { (success, forecasts) in
                         self.updateUI()
                         self.setDataFromObject(weather: self.currentWeather)
                         self.forecastsArray = forecasts
                         self.collectionView.reloadData()
-                        if self.downloadSuccesful {
-                            RealmService.shared.create(self.currentWeather)
-                            if self.currentList.count > 1 {
-                                if let firstObj = self.currentList.first {
-                                    RealmService.shared.delete(firstObj)
-                                }
-                            }
-                        }
                     })
                 }
             })
+            hideLoaderView(loaderView: loaderView, loader: indicatorView)
         }
         else {
             //internet not available
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             self.showAlert(title: "Error", message: "There is error internet", actions: [action])
-            
-            //show data from Realm
-            if let currentDBObject = currentWeatherFromRealm {
-                setDataFromObject(weather: currentDBObject)
-                collectionView.isHidden = true
-                errorLabel.text = "Connect to internet for Forecast data"
-            }
-        }
-        collectionView.reloadData()
-        hideLoaderView(loaderView: loaderView, loader: indicatorView)
-    }
-    
-    func setupLocationCode() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationAuthStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            currentLocation = locationManager.location
-        }
-        else {
-            // no location available
-            locationManager.requestWhenInUseAuthorization()
+            collectionView.reloadData()
+            hideLoaderView(loaderView: loaderView, loader: indicatorView)
         }
     }
     
     func initialiseVariables() {
-        currentWeather = CurrentWeather()
         forecast = Forecast()
         collectionView.dataSource = self
         collectionView.delegate = self
-        let realm = RealmService.shared.realm
-        currentWeatherFromRealm = realm.objects(CurrentWeather.self).last
-        currentList = realm.objects(CurrentWeather.self)
     }
     
-    @IBAction func refreshLocation() {
-        showViewAndLoader(view: loaderView, loader: indicatorView, darkMode: darkMode)
-        locationManager.requestLocation()
+    @IBAction func addButtonPressed() {
+    
+    let vc = storyboard?.instantiateViewController(withIdentifier: "locationListVC")
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
 

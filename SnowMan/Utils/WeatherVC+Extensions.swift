@@ -19,17 +19,17 @@ extension WeatherVC {
             view.backgroundColor = .black
             collectionView.backgroundColor = .black
             settingsButton.setImage(UIImage(named: "settingsW"), for: .normal)
-            refreshButton.setImage(UIImage(named: "reloadW"), for: .normal)
+            addButton.setImage(UIImage(named: "addW"), for: .normal)
         }
         else {
             setLightStyle(labels: [mainWeather, mainLocation, mainTemprature, humidityLabel, windSpeed, highLowTemprature, tempratureText, windText, humidityText])
             view.backgroundColor = .white
             collectionView.backgroundColor = .white
             settingsButton.setImage(UIImage(named: "settings"), for: .normal)
-            refreshButton.setImage(UIImage(named: "reload"), for: .normal)
+            addButton.setImage(UIImage(named: "add"), for: .normal)
         }
         collectionView.reloadData()
-        mainThumbnail.image = UIImage(named: imageToShow(darkMode: darkMode, code: currentWeather.weatherCode.value))
+        mainThumbnail.image = UIImage(named: imageToShow(darkMode: darkMode, code: currentWeather.weatherCode))
     }
 }
 
@@ -62,36 +62,12 @@ extension WeatherVC : UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func setDataFromObject(weather: CurrentWeather) {
-        mainThumbnail.image = UIImage(named: imageToShow(darkMode: darkMode, code: weather.weatherCode.value))
+        mainThumbnail.image = UIImage(named: imageToShow(darkMode: darkMode, code: weather.weatherCode))
         mainWeather.attributedText = NSAttributedString(string: weather.weatherType)
         mainLocation.text = weather.cityName
-        highLowTemprature.text = getHighLowTempString(max: weather.max.value, min: weather.min.value)
-        humidityLabel.text = getHumidityString(humidity: weather.humidity.value)
-        windSpeed.text = getWindSpeedString(windspeed: weather.windType.value)
-        mainTemprature.text = getCurrentTempString(currentTemp: weather.currentTemprature.value)
+        highLowTemprature.text = getHighLowTempString(max: weather.max, min: weather.min)
+        humidityLabel.text = getHumidityString(humidity: weather.humidity)
+        windSpeed.text = getWindSpeedString(windspeed: weather.windType)
+        mainTemprature.text = getCurrentTempString(currentTemp: weather.currentTemprature)
     }
 }
-
-extension WeatherVC : CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        locationAuthStatus()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = manager.location?.coordinate else {return}
-        Location.shared.latitude = location.latitude
-        Location.shared.longitude = location.longitude
-        if !downloadSuccesful {
-            getData()
-        }
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        showAlert(title: "Error", message: error.localizedDescription, actions: [action])
-    }
-}
-
-
-

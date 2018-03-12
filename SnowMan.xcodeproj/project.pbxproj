@@ -10,6 +10,10 @@
 		74DDB3F3258BB90EB3BA3878 /* Pods_SnowMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA8C086D893F1560E6301AB /* Pods_SnowMan.framework */; };
 		D10B4A0720516A66000A0EBF /* WeatherVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */; };
 		D10B4A0920519886000A0EBF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */; };
+		D17888D92055BE330023951D /* EnterLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17888D82055BE330023951D /* EnterLocationVC.swift */; };
+		D17888DB2055CE420023951D /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17888DA2055CE420023951D /* LocationTableViewCell.swift */; };
+		D17888DD2055CEEC0023951D /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17888DC2055CEEC0023951D /* LocationListVC.swift */; };
+		D17888DF2055D2400023951D /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17888DE2055D2400023951D /* LocationModel.swift */; };
 		D1904FF2204DB13200A5DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1904FF1204DB13200A5DD0B /* AppDelegate.swift */; };
 		D1904FF7204DB13200A5DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1904FF5204DB13200A5DD0B /* Main.storyboard */; };
 		D1904FFA204DB13200A5DD0B /* SnowMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1904FF8204DB13200A5DD0B /* SnowMan.xcdatamodeld */; };
@@ -36,6 +40,10 @@
 		9CA8C086D893F1560E6301AB /* Pods_SnowMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnowMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherVC+Extensions.swift"; sourceTree = "<group>"; };
 		D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		D17888D82055BE330023951D /* EnterLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterLocationVC.swift; sourceTree = "<group>"; };
+		D17888DA2055CE420023951D /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		D17888DC2055CEEC0023951D /* LocationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListVC.swift; sourceTree = "<group>"; };
+		D17888DE2055D2400023951D /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		D1904FEE204DB13200A5DD0B /* SnowMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1904FF1204DB13200A5DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1904FF6204DB13200A5DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			children = (
 				D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */,
 				D1905022204ED7E200A5DD0B /* Forecast.swift */,
+				D17888DE2055D2400023951D /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 			children = (
 				D1D41A35204F313100DC1DA6 /* ForecastCollectionViewCell.swift */,
 				D10B4A0820519886000A0EBF /* SettingsTableViewCell.swift */,
+				D17888DA2055CE420023951D /* LocationTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,9 +149,10 @@
 		D1905008204DB39500A5DD0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D17888D82055BE330023951D /* EnterLocationVC.swift */,
 				D190500C204DB9B700A5DD0B /* WeatherVC.swift */,
-				D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */,
 				D1EC15A12050348F00F8972A /* SettingsVC.swift */,
+				D17888DC2055CEEC0023951D /* LocationListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 			children = (
 				D1904FF1204DB13200A5DD0B /* AppDelegate.swift */,
 				D1905010204DC34A00A5DD0B /* Constants.swift */,
+				D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */,
 				D1905012204DC3B800A5DD0B /* Location.swift */,
 				D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */,
 				D1EC159520500B0300F8972A /* UIViewController+Extensions.swift */,
@@ -307,19 +319,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17888D92055BE330023951D /* EnterLocationVC.swift in Sources */,
 				D1EC15A22050348F00F8972A /* SettingsVC.swift in Sources */,
 				D1905023204ED7E200A5DD0B /* Forecast.swift in Sources */,
 				D190500F204DBC1B00A5DD0B /* CurrentWeather.swift in Sources */,
 				D1EC159620500B0300F8972A /* UIViewController+Extensions.swift in Sources */,
+				D17888DD2055CEEC0023951D /* LocationListVC.swift in Sources */,
 				D1EC159E2050101A00F8972A /* Reachability.m in Sources */,
 				D1904FF2204DB13200A5DD0B /* AppDelegate.swift in Sources */,
 				D1904FFA204DB13200A5DD0B /* SnowMan.xcdatamodeld in Sources */,
 				D10B4A0720516A66000A0EBF /* WeatherVC+Extensions.swift in Sources */,
+				D17888DF2055D2400023951D /* LocationModel.swift in Sources */,
 				D10B4A0920519886000A0EBF /* SettingsTableViewCell.swift in Sources */,
 				D190500D204DB9B700A5DD0B /* WeatherVC.swift in Sources */,
 				D1EC15A02050264B00F8972A /* RealmService.swift in Sources */,
 				D1D41A36204F313100DC1DA6 /* ForecastCollectionViewCell.swift in Sources */,
 				D1905011204DC34A00A5DD0B /* Constants.swift in Sources */,
+				D17888DB2055CE420023951D /* LocationTableViewCell.swift in Sources */,
 				D1905013204DC3B800A5DD0B /* Location.swift in Sources */,
 				D1905021204ED52000A5DD0B /* UILabel+Extensions.swift in Sources */,
 			);
