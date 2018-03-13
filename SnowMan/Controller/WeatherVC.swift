@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol WeatherVCProtocol {
+    func updateVC()
+}
+
 class WeatherVC: UIViewController {
 
     @IBOutlet weak var mainThumbnail: UIImageView!
@@ -28,11 +32,13 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
-    let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
+    
+    let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
     var forecast : Forecast!
     var forecastsArray : [Forecast]?
     var currentWeather : CurrentWeather!
     var downloadSuccesful = false
+    var delegate : WeatherVCProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +52,6 @@ class WeatherVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         performUIUpdates()
         setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     func updateUI() {
@@ -75,8 +77,8 @@ extension WeatherVC {
         let networkStatus = networkReachability?.currentReachabilityStatus()
         if networkStatus?.rawValue != NotReachable.rawValue {
             //internet available
-            let latitude = UserDefaults.standard.double(forKey: latitudeKey)
-            let longitude = UserDefaults.standard.double(forKey: longitudeKey)
+            let latitude = UserDefaults.standard.double(forKey: Constants.latitudeKey)
+            let longitude = UserDefaults.standard.double(forKey: Constants.longitudeKey)
             currentWeather = CurrentWeather()
             currentWeather.downloadWeatherDetails(url: getCurrentWeatherURL(latitudeCoords: latitude, longitudeCoords: longitude) ,completionHandler: { (success) in
                 if success {
@@ -95,7 +97,7 @@ extension WeatherVC {
         else {
             //internet not available
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            self.showAlert(title: "Error", message: "There is error internet", actions: [action])
+            self.showAlert(title: "Error", message: "There is no internet", actions: [action])
             collectionView.reloadData()
             hideLoaderView(loaderView: loaderView, loader: indicatorView)
         }

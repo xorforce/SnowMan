@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func checkForFirstLaunch() {
-        if UserDefaults.standard.object(forKey: firstLaunchKey) == nil {
-            UserDefaults.standard.set(true, forKey: firstLaunchKey)
-            UserDefaults.standard.set(false, forKey: darkModeKey)
+        if UserDefaults.standard.object(forKey: Constants.firstLaunchKey) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.firstLaunchKey)
+            UserDefaults.standard.set(false, forKey: Constants.darkModeKey)
             UserDefaults.standard.synchronize()
         }
     }

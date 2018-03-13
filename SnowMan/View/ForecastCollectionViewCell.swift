@@ -16,7 +16,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     
     
     func configureCell(forecast: Forecast) {
-        let darkMode = UserDefaults.standard.bool(forKey: "darkMode")
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
         if darkMode {
             setLightStyle(views: [highLowTempLabel, dayLabel])
         }

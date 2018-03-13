@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsVC: UITableViewController {
     
-    let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
+    let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
     let rows = ["Dark Mode"]
     
     override func viewDidLoad() {
@@ -40,6 +40,7 @@ class SettingsVC: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
     }
     

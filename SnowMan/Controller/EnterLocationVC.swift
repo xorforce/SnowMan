@@ -10,17 +10,19 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class EnterLocationVC: UIViewController {
+class EnterLocationVC: UIViewController{
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     var locationForRealm : LocationModel!
     var fromLocationVC : Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaults.standard.bool(forKey: firstLaunchKey) == true {
-            UserDefaults.standard.set(false, forKey: firstLaunchKey)
+        if UserDefaults.standard.bool(forKey: Constants.firstLaunchKey) == true {
+            UserDefaults.standard.set(false, forKey: Constants.firstLaunchKey)
         }
         else {
             performSegue(withIdentifier: "toWeatherVC", sender: self)
@@ -40,7 +42,7 @@ class EnterLocationVC: UIViewController {
         searchButton.layer.borderColor = UIColor.black.cgColor
         searchButton.layer.borderWidth = 0.75
         
-        if UserDefaults.standard.bool(forKey: firstLaunchKey) {
+        if UserDefaults.standard.bool(forKey: Constants.firstLaunchKey) {
             navigationItem.leftBarButtonItem?.isEnabled = false
         }
     }
@@ -48,7 +50,8 @@ class EnterLocationVC: UIViewController {
     @IBAction func searchButton(_ sender: Any) {
         geocode { (success) in
             if success {
-                self.performSegue(withIdentifier: "toWeatherVC", sender: self)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "weatherVC")
+                self.present(vc!, animated: true, completion: nil)
             }
             else {
                 let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -65,7 +68,7 @@ class EnterLocationVC: UIViewController {
                 geocoder.geocodeAddressString(text, completionHandler: { (placemarks, error) in
                     if let error = error {
                         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                        self.showAlert(title: "Error", message: "\(error.localizedDescription)", actions: [action])
+                        self.showAlert(title: "Error", message: "Try again. Geolocation could not be done.", actions: [action])
                         print("\(error.localizedDescription)")
                         completion(false)
                     }
@@ -75,8 +78,8 @@ class EnterLocationVC: UIViewController {
                             let latitude = p.coordinate.latitude
                             let longitude = p.coordinate.longitude
                             
-                            UserDefaults.standard.set(latitude, forKey: latitudeKey)
-                            UserDefaults.standard.set(longitude, forKey: longitudeKey)
+                            UserDefaults.standard.set(latitude, forKey: Constants.latitudeKey)
+                            UserDefaults.standard.set(longitude, forKey: Constants.longitudeKey)
                             UserDefaults.standard.synchronize()
                             
                             self.locationForRealm = LocationModel(locationString: text, latitude: latitude, longitude: longitude)

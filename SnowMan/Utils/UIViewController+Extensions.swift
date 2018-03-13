@@ -114,12 +114,12 @@ extension UIViewController {
     }
     
     func getCurrentWeatherURL(latitudeCoords: Double, longitudeCoords: Double) -> String {
-        let currentWeatherUrl = "\(current_base_url)\(latitude)\(latitudeCoords)\(longitude)\(longitudeCoords)\(app_id)\(api_key)"
+        let currentWeatherUrl = "\(Constants.current_base_url)\(Constants.latitude)\(latitudeCoords)\(Constants.longitude)\(longitudeCoords)\(Constants.app_id)\(Constants.api_key)"
         return currentWeatherUrl
     }
     
     func getCurrentForecastURL(latitudeCoords: Double, longitudeCoords: Double) -> String {
-        let forecastWeatherUrl = "\(daily_base_url)\(latitude)\(latitudeCoords)\(longitude)\(longitudeCoords)&cnt=10&mode=json\(app_id)\(api_key)"
+        let forecastWeatherUrl = "\(Constants.daily_base_url)\(Constants.latitude)\(latitudeCoords)\(Constants.longitude)\(longitudeCoords)&cnt=10&mode=json\(Constants.app_id)\(Constants.api_key)"
         return forecastWeatherUrl
     }
     

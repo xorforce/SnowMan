@@ -18,7 +18,7 @@ class LocationTableViewCell: UITableViewCell {
     }
     
     func configureCell(_ location: LocationModel) {
-        let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
         if darkMode {
             backgroundColor = .black
             locationLabel.textColor = .white

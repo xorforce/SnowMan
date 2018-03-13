@@ -322,7 +322,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="FSU-Fr-fDx">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="dco-46-ye1" kind="show" id="cyq-zA-35Y"/>
+                                <segue destination="dco-46-ye1" kind="show" identifier="toEnterLocVC" id="cyq-zA-35Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

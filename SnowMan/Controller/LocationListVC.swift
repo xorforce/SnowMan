@@ -12,7 +12,7 @@ import RealmSwift
 class LocationListVC: UITableViewController {
     
     var locations : Results<LocationModel>!
-    let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
+    let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
     override func viewDidLoad() {
         super.viewDidLoad()
         let realm = RealmService.shared.realm
@@ -60,11 +60,21 @@ class LocationListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let obj = locations[indexPath.row]
-        let vc = storyboard?.instantiateViewController(withIdentifier: "weatherVC")
-        UserDefaults.standard.set(obj.latitude.value, forKey: latitudeKey)
-        UserDefaults.standard.set(obj.longitude.value, forKey: longitudeKey)
-        navigationController?.pushViewController(vc!, animated: true)
+        
+        let networkReachability = Reachability.forInternetConnection()
+        let networkStatus = networkReachability?.currentReachabilityStatus()
+        
+        if networkStatus?.rawValue != NotReachable.rawValue {
+            let obj = locations[indexPath.row]
+            let vc = storyboard?.instantiateViewController(withIdentifier: "weatherVC")
+            UserDefaults.standard.set(obj.latitude.value, forKey: Constants.latitudeKey)
+            UserDefaults.standard.set(obj.longitude.value, forKey: Constants.longitudeKey)
+            navigationController?.pushViewController(vc!, animated: true)
+        }
+        else {
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            showAlert(title: "Error", message: "Connect your device to Internet and try again.", actions: [action])
+        }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -82,7 +92,7 @@ class LocationListVC: UITableViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        let darkMode = UserDefaults.standard.bool(forKey: darkModeKey)
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)
         if darkMode {
             return .lightContent
         }
