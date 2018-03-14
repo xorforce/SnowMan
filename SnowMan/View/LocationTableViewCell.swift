@@ -12,10 +12,6 @@ class LocationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var locationLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
     
     func configureCell(_ location: LocationModel) {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.darkModeKey)

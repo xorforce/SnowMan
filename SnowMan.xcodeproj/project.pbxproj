@@ -23,7 +23,6 @@
 		D190500F204DBC1B00A5DD0B /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */; };
 		D1905011204DC34A00A5DD0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905010204DC34A00A5DD0B /* Constants.swift */; };
 		D1905013204DC3B800A5DD0B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905012204DC3B800A5DD0B /* Location.swift */; };
-		D1905021204ED52000A5DD0B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */; };
 		D1905023204ED7E200A5DD0B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1905022204ED7E200A5DD0B /* Forecast.swift */; };
 		D1B320E9205059C500C07167 /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1B320E7205059C500C07167 /* Nexa Bold.otf */; };
 		D1B320EA205059C500C07167 /* Nexa Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1B320E8205059C500C07167 /* Nexa Light.otf */; };
@@ -55,7 +54,6 @@
 		D190500E204DBC1B00A5DD0B /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		D1905010204DC34A00A5DD0B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1905012204DC3B800A5DD0B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		D1905022204ED7E200A5DD0B /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		D1B320E7205059C500C07167 /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
 		D1B320E8205059C500C07167 /* Nexa Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Light.otf"; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				D1905010204DC34A00A5DD0B /* Constants.swift */,
 				D10B4A0620516A66000A0EBF /* WeatherVC+Extensions.swift */,
 				D1905012204DC3B800A5DD0B /* Location.swift */,
-				D1905020204ED52000A5DD0B /* UILabel+Extensions.swift */,
 				D1EC159520500B0300F8972A /* UIViewController+Extensions.swift */,
 				D1EC159F2050264B00F8972A /* RealmService.swift */,
 				D1B320E7205059C500C07167 /* Nexa Bold.otf */,
@@ -337,7 +334,6 @@
 				D1905011204DC34A00A5DD0B /* Constants.swift in Sources */,
 				D17888DB2055CE420023951D /* LocationTableViewCell.swift in Sources */,
 				D1905013204DC3B800A5DD0B /* Location.swift in Sources */,
-				D1905021204ED52000A5DD0B /* UILabel+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

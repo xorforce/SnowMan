@@ -50,8 +50,7 @@ class EnterLocationVC: UIViewController{
     @IBAction func searchButton(_ sender: Any) {
         geocode { (success) in
             if success {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "weatherVC")
-                self.present(vc!, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "toWeatherVC", sender: self)
             }
             else {
                 let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
